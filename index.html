@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Product page of an E-commerce" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <button class="menu-btn" aria-pressed="false" type="button">
+        <img src="images/icon-menu.svg" alt="menu icon" />
+      </button>
+    
+      <a href="#">
+        <h1 class="logo">sneakers</h1>
+      </a>
+
+      <nav class="main-navigation" aria-label="Primary" aria-live="polite">
+        <button class="close-menu-btn" type="button" aria-pressed="false">
+          <img src="images/icon-close.svg" alt="close menu icon" />
+        </button>
+        <ul class="list-menu">
+          <li class="list-menu-item" aria-current="page">
+            <a href="#">Collections</a>
+          </li>
+          <li class="list-menu-item"><a href="#">Men</a></li>
+          <li class="list-menu-item"><a href="#">Women</a></li>
+          <li class="list-menu-item"><a href="#">About</a></li>
+          <li class="list-menu-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <img src="/images/icon-cart.svg" alt="cart icon" class="cart-icon" />
+
+        <div class="avatar-container">
+          <img class="avatar-img" src="/images/image-avatar.png" alt="avatar" />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="product-img-section" aria-label="product-img-section">
+        <div class="product-img-container">
+          <button id="icon-previous" type="button">
+            <img src="images/icon-previous.svg" alt="icon-previous" />
+            <img
+              src="/images/image-product-1-thumbnail.jpg"
+              alt="Product image"
+            />
+          </button>
+          <button id="icon-next" type="button">
+            <img src="images/icon-next.svg" alt="icon-next" />
+          </button>
+        </div>
+      </section>
+      <section
+        class="product-info-section"
+        aria-labelledby="product-info-title"
+        aria-describedby="product-info-desc"
+      >
+        <h4 class="company-name">Sneaker Company</h4>
+        <h2 class="product-title" id="product-info-title">
+          Fall Limited Edition Sneakers
+        </h2>
+        <p id="product-info-desc">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="price-section">
+          <div>
+            <h2 class="off-price">$125.00</h2>
+            <div class="off-tag">50%</div>
+          </div>
+          <p class="main-price">$250.00</p>
+        </div>
+
+        <div class="product-count-container">
+          <img id="icon-minus" src="images/icon-minus.svg" alt="minus icon" />
+
+          <h5 class="product-count">0</h5>
+
+          <img id="icon-plus" src="images/icon-plus.svg" alt="plus icon" />
+        </div>
+
+        <button type="button">
+          <img src="images/icon-cart.svg" alt="" />
+          Add to cart
+        </button>
+      </section>
+    </main>
+
+    0 Add to cart
+  </body>
+</html>

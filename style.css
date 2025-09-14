@@ -1,0 +1,149 @@
+/* Variables */
+
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+
+  /* ### Neutral */
+
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --Lightbox-background: hsla(0, 0%, 0%, 75%);
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+a,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* layout */
+body {
+  position: relative;
+  height: auto;
+}
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  padding-inline: 1em;
+  border-bottom: 0.1em solid var(--Grayish-blue);
+  height: 89px;
+}
+
+/* Navigation */
+
+.menu-btn {
+  background-color: transparent;
+
+  @media (min-width: 35em) {
+    display: none;
+  }
+}
+
+.menu-btn[aria-pressed="true"] {
+  display: none;
+}
+
+nav.main-navigation {
+  height: 100%;
+}
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  gap: 1em;
+
+  @media (min-width: 35em) {
+    display: grid;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+
+    li {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+  }
+}
+
+.list-menu-item a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  &:hover {
+    border-bottom: 0.2em var(--Orange) solid;
+  }
+}
+
+.close-menu-btn {
+  display: none;
+}
+
+nav.main-navigation.expanded {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60vw;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .close-menu-btn {
+    display: flex;
+    background-color: transparent;
+  }
+}
+
+/* Avatar */
+
+.avatar-container {
+  width: 4em;
+  height: 4em;
+}
+
+.avatar-container:hover {
+  border: 0.2em var(--Orange) solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+}
+
+header :last-child {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.cart-icon {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
