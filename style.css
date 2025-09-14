@@ -29,20 +29,40 @@ a:active {
   color: inherit;
 }
 
+html {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /* layout */
 body {
   position: relative;
-  height: auto;
+  max-width: 65em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
+
 /* Header */
 header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1em;
   padding-inline: 1em;
   border-bottom: 0.1em solid var(--Grayish-blue);
   height: 89px;
+
+  @media (min-width: 36em) {
+  }
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 /* Navigation */
@@ -50,7 +70,7 @@ header {
 .menu-btn {
   background-color: transparent;
 
-  @media (min-width: 35em) {
+  @media (min-width: 36em) {
     display: none;
   }
 }
@@ -59,21 +79,24 @@ header {
   display: none;
 }
 
-nav.main-navigation {
-  height: 100%;
-}
-.main-navigation ul {
+.main-navigation {
   display: none;
-  list-style: none;
-  gap: 1em;
-
-  @media (min-width: 35em) {
-    display: grid;
+  @media (min-width: 36em) {
     height: 100%;
+    display: flex;
+  }
+}
+
+.main-navigation ul {
+    list-style: none;
+  @media (min-width: 36em) {
+    gap: 1em;
+    display: grid;
     justify-items: center;
     align-items: center;
     grid-template-columns: repeat(5, 1fr);
-
+    height: 100%;
+    display: flex;
     li {
       display: flex;
       height: 100%;
@@ -110,6 +133,8 @@ nav.main-navigation.expanded {
   ul {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .close-menu-btn {
