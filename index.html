@@ -10,12 +10,16 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <title>Frontend Mentor | E-commerce product page</title>
-
+    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
+
   <body>
     <header>
       <div class="logo-wrapper">
@@ -28,9 +32,19 @@
         </a>
       </div>
 
-      <nav class="main-navigation" aria-label="Primary" id="mobile-menu" aria-expanded="false" aria-live="polite">
+      <nav
+        class="main-navigation"
+        aria-label="Primary"
+        id="mobile-menu"
+        aria-expanded="false"
+        aria-live="polite"
+      >
         <button class="close-menu-btn" type="button">
-          <img src="images/icon-close.svg" alt="close menu icon" aria-controls="mobile-menu" />
+          <img
+            src="images/icon-close.svg"
+            alt="close menu icon"
+            aria-controls="mobile-menu"
+          />
         </button>
         <ul class="list-menu">
           <li class="list-menu-item" aria-current="page">
@@ -53,18 +67,18 @@
 
     <main>
       <section class="product-img-section" aria-label="product-img-section">
+        <button id="icon-previous" class="product-nav-icon" type="button">
+          <img src="images/icon-previous.svg" alt="icon-previous" />
+        </button>
         <div class="product-img-container">
-          <button id="icon-previous" type="button">
-            <img src="images/icon-previous.svg" alt="icon-previous" />
-            <img
-              src="/images/image-product-1-thumbnail.jpg"
-              alt="Product image"
-            />
-          </button>
-          <button id="icon-next" type="button">
-            <img src="images/icon-next.svg" alt="icon-next" />
-          </button>
+          <img
+            src="/images/image-product-1.jpg"
+            alt="Product image"
+          />
         </div>
+        <button id="icon-next" class="product-nav-icon" type="button">
+          <img src="images/icon-next.svg" alt="icon-next" />
+        </button>
       </section>
       <section
         class="product-info-section"
@@ -75,18 +89,18 @@
         <h2 class="product-title" id="product-info-title">
           Fall Limited Edition Sneakers
         </h2>
-        <p id="product-info-desc">
+        <p id="product-info-desc" class="product-info-desc">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
         </p>
 
         <div class="price-section">
-          <div>
+          <div class="right-col">
             <h2 class="off-price">$125.00</h2>
             <div class="off-tag">50%</div>
           </div>
-          <p class="main-price">$250.00</p>
+          <p class="original-price">$250.00</p>
         </div>
 
         <div class="product-count-container">
@@ -97,13 +111,11 @@
           <img id="icon-plus" src="images/icon-plus.svg" alt="plus icon" />
         </div>
 
-        <button type="button">
-          <img src="images/icon-cart.svg" alt="" />
+        <button type="button" class="purchase-btn">
+          <img src="/images/icon-cart.svg" alt="" />
           Add to cart
         </button>
       </section>
     </main>
-
-    0 Add to cart
   </body>
 </html>
