@@ -10,6 +10,7 @@ const minusBtn = document.querySelector("#icon-minus");
 const plusBtn = document.querySelector("#icon-plus");
 const productCount = document.querySelector(".product-count");
 const cartBadge = document.querySelector(".cart-counter-badge");
+const cartBadge = document.querySelector(".cart-counter-badge");
 const addToCartBtn = document.querySelector(".purchase-btn");
 // Menu
 menuBtn.addEventListener("click", () => {
@@ -64,6 +65,7 @@ minusBtn.addEventListener("click", () => {
 
 plusBtn.addEventListener("click", () => {
   productCount.innerHTML++;
+ });
  });
 
 addToCartBtn.addEventListener("click", () => {
