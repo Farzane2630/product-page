@@ -155,6 +155,33 @@ nav.main-navigation.expanded {
   }
 }
 
+/* Cart icon */
+#cart-icon {
+
+  position: relative;
+}
+.cart-icon {
+  width: 100%;
+  height: 100%;
+  width: 2em;
+  height: 2em;
+}
+
+.cart-counter-badge {
+  display: none;
+}
+.cart-counter-badge.show {
+  display: flex;
+  background-color: var(--Orange);
+  color: white;
+  font-weight: 600;
+  border-radius: 2em;
+  padding: 0.2em 0.75em;
+  position: absolute;
+  bottom: 50%;
+  left: 60%;
+}
+
 /* Avatar */
 
 .avatar-container {
@@ -177,12 +204,6 @@ header :last-child {
   display: flex;
   gap: 1em;
   align-items: center;
-}
-
-.cart-icon {
-  width: 1.5em;
-  height: 1.5em;
-  cursor: pointer;
 }
 
 /* Main */

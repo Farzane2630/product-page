@@ -9,6 +9,7 @@ const nextBtn = document.getElementById("icon-next");
 const minusBtn = document.querySelector("#icon-minus");
 const plusBtn = document.querySelector("#icon-plus");
 const productCount = document.querySelector(".product-count");
+const cartBadge = document.querySelector(".cart-counter-badge");
 const addToCartBtn = document.querySelector(".purchase-btn");
 // Menu
 menuBtn.addEventListener("click", () => {
@@ -63,11 +64,12 @@ minusBtn.addEventListener("click", () => {
 
 plusBtn.addEventListener("click", () => {
   productCount.innerHTML++;
-});
+ });
 
 addToCartBtn.addEventListener("click", () => {
   if (Number(productCount.innerHTML) > 0) {
     alert("purchased!");
-    productCount.innerHTML = 0;
-  }else alert("Oops! Your cart is empty! Please select atleast one!")
+    cartBadge.classList.add("show");
+    cartBadge.innerHTML = productCount.innerHTML;
+  } else alert("Oops! Your cart is empty! Please select atleast one!");
 });
