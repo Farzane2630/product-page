@@ -6,6 +6,10 @@ const productImage = document.querySelector(".product-img");
 const previousBtn = document.getElementById("icon-previous");
 const nextBtn = document.getElementById("icon-next");
 
+const minusBtn = document.querySelector("#icon-minus");
+const plusBtn = document.querySelector("#icon-plus");
+const productCount = document.querySelector(".product-count");
+const addToCartBtn = document.querySelector(".purchase-btn");
 // Menu
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.add("expanded");
@@ -51,3 +55,19 @@ const BtnHandler = (step) => {
 
 previousBtn.addEventListener("click", () => BtnHandler(+1));
 nextBtn.addEventListener("click", () => BtnHandler(-1));
+
+// add to cart
+minusBtn.addEventListener("click", () => {
+  Number(productCount.innerHTML) > 0 && productCount.innerHTML--;
+});
+
+plusBtn.addEventListener("click", () => {
+  productCount.innerHTML++;
+});
+
+addToCartBtn.addEventListener("click", () => {
+  if (Number(productCount.innerHTML) > 0) {
+    alert("purchased!");
+    productCount.innerHTML = 0;
+  }else alert("Oops! Your cart is empty! Please select atleast one!")
+});

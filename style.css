@@ -29,6 +29,11 @@ a:active {
   color: inherit;
 }
 
+button {
+  background-color: inherit;
+  cursor: pointer;
+}
+
 html {
   width: 100%;
   display: flex;
@@ -244,7 +249,7 @@ main {
 .product-info-section {
   min-height: 100vh;
   padding-inline: 2em;
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 1em;
 }
@@ -265,11 +270,12 @@ main {
   font-weight: 700;
 }
 
-.price-section, .price-section .right-col {
+.price-section,
+.price-section .right-col {
   display: flex;
   align-items: center;
-justify-content: space-between;
-column-gap: 1em;
+  justify-content: space-between;
+  column-gap: 1em;
 }
 
 .off-tag {
@@ -280,7 +286,7 @@ column-gap: 1em;
   border-radius: 0.3em;
 }
 
-.original-price{
+.original-price {
   text-decoration: line-through;
   color: var(--Dark-grayish-blue);
   font-weight: 900;
@@ -288,7 +294,7 @@ column-gap: 1em;
 }
 
 /* Counter */
-.product-count-container{
+.product-count-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -298,7 +304,7 @@ column-gap: 1em;
 }
 
 /* Purchase Button */
-.purchase-btn{
+.purchase-btn {
   display: flex;
   justify-content: center;
   align-items: center;
