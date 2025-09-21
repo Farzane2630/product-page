@@ -25,30 +25,29 @@ const productImages = [
   "/images/image-product-4.jpg",
 ];
 
-const getCurrentImgIndex = () => {
-  const currentImgSrc = productImage.getAttribute("src");
-  return productImages.findIndex((img) => img == currentImgSrc);
-};
+const getCurrentImgIndex = () =>
+  productImages.indexOf(productImage.getAttribute("src"));
 
-const nextBtnHandler = () => {
+const BtnHandler = (step) => {
   const currentImgIndex = getCurrentImgIndex();
+  const total = productImages.length;
 
-  if (currentImgIndex >= 0 && currentImgIndex < 3) {
-    productImage.setAttribute("src", productImages[currentImgIndex + 1]);
-  } else {
-    productImage.setAttribute("src", productImages[0]);
-  }
+  /*
+  below line makes sure to follow DRY and 
+  also avoid long if/else checks.
+  1. currentIndex + step: shifts the index forward or backward.
+  Example: if currentIndex = 3 and step = 1, you get 4.
+
+  2. + total: prevents negatives. 
+  If you go back from 0 (0 + (-1) = -1), adding total (like 4) makes it 3 instead of -1.
+  Example: -1 + 4 = 3.
+
+  3. % total: wraps around the number so it always stays within 0 … total-1.
+  Example: (4) % 4 = 0, (3) % 4 = 3.
+  */
+  const imageIndex = (currentImgIndex + step + total) % total;
+  productImage.setAttribute("src", productImages[imageIndex]);
 };
 
-const previousBtnHandler = () => {
-  const currentImgIndex = getCurrentImgIndex();
-
-  if (currentImgIndex <= 3 && currentImgIndex >= 1) {
-    productImage.setAttribute("src", productImages[currentImgIndex - 1]);
-  } else {
-    productImage.setAttribute("src", productImages[3]);
-  }
-};
-
-previousBtn.addEventListener("click", previousBtnHandler);
-nextBtn.addEventListener("click", nextBtnHandler);
+previousBtn.addEventListener("click", () => BtnHandler(+1));
+nextBtn.addEventListener("click", () => BtnHandler(-1));
