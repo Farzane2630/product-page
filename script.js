@@ -11,6 +11,9 @@ const plusBtn = document.querySelector("#icon-plus");
 const productCount = document.querySelector(".product-count");
 const cartBadge = document.querySelector(".cart-counter-badge");
 const addToCartBtn = document.querySelector(".purchase-btn");
+
+const albumImages = document.querySelectorAll(".img")
+
 // Menu
 menuBtn.addEventListener("click", () => {
   mobileMenu.classList.add("expanded");
@@ -56,6 +59,15 @@ const BtnHandler = (step) => {
 
 previousBtn.addEventListener("click", () => BtnHandler(+1));
 nextBtn.addEventListener("click", () => BtnHandler(-1));
+
+// album 
+Array.from(albumImages).forEach((img, index)=>{
+ img.addEventListener("click", ()=>{
+    albumImages.forEach(img => img.classList.remove("active")) // reset img style
+    productImage.setAttribute("src", productImages[index])
+    img.classList.add("active") 
+  })
+})
 
 // add to cart
 minusBtn.addEventListener("click", () => {

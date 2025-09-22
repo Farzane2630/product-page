@@ -231,7 +231,11 @@ main {
   justify-content: center;
 
   @media (min-width: 35em) {
-    height: 16em;
+    height: 18em;
+  }
+
+   @media (min-width: 65em) {
+    height: 20em;
   }
 }
 .product-img-container img {
