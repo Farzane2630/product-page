@@ -21,6 +21,69 @@
   </head>
 
   <body>
+    <div class="overlay-container hide">
+      <section
+        class="product-img-section_overlay"
+        aria-label="product-img-section-overlay"
+      >
+        <button type="button" class="close-btn_overlay">
+          <img src="images/icon-close.svg" alt="close button" />
+        </button>
+        <div class="product-img-container_overlay">
+          <button
+            id="icon-previous_overlay"
+            class="product-nav-icon_overlay"
+            type="button"
+          >
+            <img src="images/icon-previous.svg" alt="icon-previous" />
+          </button>
+          <img
+            src="/images/image-product-1.jpg"
+            alt="Product image"
+            class="product-img_overlay"
+          />
+          <button
+            id="icon-next_overlay"
+            class="product-nav-icon_overlay"
+            type="button"
+          >
+            <img src="images/icon-next.svg" alt="icon-next" />
+          </button>
+        </div>
+
+        <div class="album-wrapper">
+          <div class="img-frame">
+            <image
+              src="/images/image-product-1-thumbnail.jpg"
+              alt="image-product-1-thumbnail"
+              class="img-overlay active"
+            />
+          </div>
+          <div class="img-frame">
+            <image
+              src="/images/image-product-2-thumbnail.jpg"
+              alt="image-product-2-thumbnail"
+              class="img-overlay"
+            />
+          </div>
+          <div class="img-frame">
+            <image
+              src="/images/image-product-3-thumbnail.jpg"
+              alt="image-product-3-thumbnail"
+              class="img-overlay"
+            />
+          </div>
+          <div class="img-frame">
+            <image
+              src="/images/image-product-4-thumbnail.jpg"
+              alt="image-product-4-thumbnail"
+              class="img-overlay"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
     <header>
       <div class="logo-wrapper">
         <button class="menu-btn" type="button" aria-controls="mobile-menu">

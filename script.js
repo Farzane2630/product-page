@@ -6,13 +6,20 @@ const productImage = document.querySelector(".product-img");
 const previousBtn = document.getElementById("icon-previous");
 const nextBtn = document.getElementById("icon-next");
 
+const overlayContainer = document.querySelector(".overlay-container");
+const overlayPreviousBtn = document.getElementById("icon-previous_overlay");
+const overlayNextBtn = document.getElementById("icon-next_overlay");
+const closeOverlayBtn = document.querySelector(".close-btn_overlay");
+const overLayProductImage = document.querySelector(".product-img_overlay");
+const overlayAlbumImages = document.querySelectorAll(".img-overlay");
+
 const minusBtn = document.querySelector("#icon-minus");
 const plusBtn = document.querySelector("#icon-plus");
 const productCount = document.querySelector(".product-count");
 const cartBadge = document.querySelector(".cart-counter-badge");
 const addToCartBtn = document.querySelector(".purchase-btn");
 
-const albumImages = document.querySelectorAll(".img")
+const albumImages = document.querySelectorAll(".img");
 
 // Menu
 menuBtn.addEventListener("click", () => {
@@ -33,10 +40,14 @@ const productImages = [
   "/images/image-product-4.jpg",
 ];
 
-const getCurrentImgIndex = () =>
-  productImages.indexOf(productImage.getAttribute("src"));
-
-const BtnHandler = (step) => {
+const getCurrentImgIndex = () => {
+  if (overlayContainer.classList.contains("hide")) {
+    return productImages.indexOf(productImage.getAttribute("src"));
+  } else {
+    return productImages.indexOf(overLayProductImage.getAttribute("src"));
+  }
+};
+const btnHandler = (step) => {
   const currentImgIndex = getCurrentImgIndex();
   const total = productImages.length;
 
@@ -54,20 +65,46 @@ const BtnHandler = (step) => {
   Example: (4) % 4 = 0, (3) % 4 = 3.
   */
   const imageIndex = (currentImgIndex + step + total) % total;
-  productImage.setAttribute("src", productImages[imageIndex]);
+
+  if (overlayContainer.classList.contains("hide")) {
+    productImage.setAttribute("src", productImages[imageIndex]);
+  } else {
+    overLayProductImage.setAttribute("src", productImages[imageIndex]);
+  }
 };
 
-previousBtn.addEventListener("click", () => BtnHandler(+1));
-nextBtn.addEventListener("click", () => BtnHandler(-1));
+previousBtn.addEventListener("click", () => btnHandler(+1));
+nextBtn.addEventListener("click", () => btnHandler(-1));
 
-// album 
-Array.from(albumImages).forEach((img, index)=>{
- img.addEventListener("click", ()=>{
-    albumImages.forEach(img => img.classList.remove("active")) // reset img style
-    productImage.setAttribute("src", productImages[index])
-    img.classList.add("active") 
-  })
-})
+// overlay
+productImage.addEventListener("click", () => {
+  overlayContainer.classList.remove("hide");
+});
+
+overlayPreviousBtn.addEventListener("click", () => btnHandler(+1));
+
+overlayNextBtn.addEventListener("click", () => btnHandler(-1));
+
+closeOverlayBtn.addEventListener("click", () => {
+  overlayContainer.classList.add("hide");
+});
+
+// album
+function albumHandler(img, index, album, productImg) {
+  img.addEventListener("click", () => {
+    album.forEach((img) => img.classList.remove("active")); // reset img style
+    productImg.setAttribute("src", productImages[index]);
+    img.classList.add("active");
+  });
+}
+
+Array.from(albumImages).forEach((img, index) => {
+  albumHandler(img, index, albumImages, productImage);
+});
+
+Array.from(overlayAlbumImages).forEach((img, index) => {
+  albumHandler(img, index, overlayAlbumImages, overLayProductImage);
+});
 
 // add to cart
 minusBtn.addEventListener("click", () => {
@@ -76,8 +113,7 @@ minusBtn.addEventListener("click", () => {
 
 plusBtn.addEventListener("click", () => {
   productCount.innerHTML++;
- });
-
+});
 
 addToCartBtn.addEventListener("click", () => {
   if (Number(productCount.innerHTML) > 0) {
