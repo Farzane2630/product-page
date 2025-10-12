@@ -92,7 +92,7 @@ closeOverlayBtn.addEventListener("click", () => {
 // album
 function albumHandler(img, index, album, productImg) {
   img.addEventListener("click", () => {
-    album.forEach((img) => img.classList.remove("active")); // reset img style
+    album.forEach((item) => item.classList.remove("active")); // reset img style
     productImg.setAttribute("src", productImages[index]);
     img.classList.add("active");
   });
