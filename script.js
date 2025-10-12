@@ -19,7 +19,7 @@ const productCount = document.querySelector(".product-count");
 const cartBadge = document.querySelector(".cart-counter-badge");
 const addToCartBtn = document.querySelector(".purchase-btn");
 
-const albumImages = document.querySelectorAll(".img");
+const albumImages = document.querySelectorAll(".img-frame_img");
 
 // Menu
 menuBtn.addEventListener("click", () => {
