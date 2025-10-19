@@ -36,7 +36,7 @@ button {
 
 html {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   position: relative;
   min-height: 100vh;
@@ -48,7 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   font-size: 1rem;
   font-family: "Kumbh Sans", sans-serif;
 }
@@ -170,7 +170,7 @@ header {
   }
 }
 
-.main-navigation ul {
+.main-navigation menu {
   list-style: none;
   @media (min-width: 36em) {
     gap: 1em;
@@ -212,7 +212,7 @@ nav.main-navigation.expanded {
   flex-direction: column;
   gap: 1em;
 
-  ul {
+  menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
