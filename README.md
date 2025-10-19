@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 
-Desktop lighthouse score: ![<img width="1316" height="651" alt="Image" src="https://github.com/user-attachments/assets/17be9dde-c006-4104-849f-1cbdfa3ad6bd" />]
+Desktop lighthouse score: <img width="1316" height="651" alt="Image" src="https://github.com/user-attachments/assets/17be9dde-c006-4104-849f-1cbdfa3ad6bd" />
 
 
 
