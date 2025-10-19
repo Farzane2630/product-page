@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop lighthouse score]
-  <img width="1310" height="650" alt="Image" src="https://github.com/user-attachments/assets/f412cb7c-78ee-4078-9aac-0f2e9e5b7911" />
+Desktop lighthouse score: ![<img width="1316" height="651" alt="Image" src="https://github.com/user-attachments/assets/17be9dde-c006-4104-849f-1cbdfa3ad6bd" />]
+
 
 
 ### Links
